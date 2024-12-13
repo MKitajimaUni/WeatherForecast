@@ -60,9 +60,8 @@ public class UI {
 
         DefaultTableModel model = new DefaultTableModel(columnData, columnName) {
         };
-        JTable table = new JTable(model);
-        JScrollPane newWeatherPane = new JScrollPane(table);
-        newWeatherPane.setBounds(30, 30, newWeatherPane.getWidth(), newWeatherPane.getHeight());
+        JScrollPane newWeatherPane = new JScrollPane(new JTable(model));
+        newWeatherPane.setBounds(30, 30, newWeatherPane.getPreferredSize().width,  newWeatherPane.getPreferredSize().height / 2);
 
         if (weatherPane != null)
             jframe.remove(weatherPane);
@@ -103,7 +102,7 @@ public class UI {
         };
         JTable table = new JTable(model);
         JScrollPane newWeatherPane = new JScrollPane(table);
-        newWeatherPane.setBounds(30, 30, newWeatherPane.getWidth(), newWeatherPane.getHeight());
+        newWeatherPane.setBounds(30, 30, newWeatherPane.getPreferredSize().width,  newWeatherPane.getPreferredSize().height / 2);
 
         if (weatherPane != null)
             jframe.remove(weatherPane);
